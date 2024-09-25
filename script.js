@@ -3,6 +3,7 @@ const drinkList = document.getElementById("drink")
 const drinkDetailsContent = document.querySelector(".drink-details-content")
 const recipeCloseBtn = document.getElementById("recipe-close-btn")
 const notFounded = document.getElementById("not-found")
+const footerBtn = document.getElementById("footer")
 
 searchBtn.addEventListener("click", getDrinkList)
 drinkList.addEventListener("click", getDrinkRecipe)
@@ -28,6 +29,7 @@ function getDrinkList () {
 
       if (data.drinks) {
         notFounded.innerHTML = ""
+        footerBtn.innerHTML = ""
         data.drinks.forEach(drink => {
           html += `
           <div class = "drink-item" data-id = "${drink.idDrink}">
@@ -40,7 +42,7 @@ function getDrinkList () {
             </div>
           </div>`
         })
-        
+        footerBtn.innerHTML += `<a href="#home"><button class="btn-up">Get up</button></a>`
         drinkList.classList.remove("notFound")
 
         document.body.style.backgroundColor = "#0B0B17"
