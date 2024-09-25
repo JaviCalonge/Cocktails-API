@@ -16,7 +16,7 @@ function getDrinkList () {
 
   if (searchInputText === "") {
     drinkList.innerHTML = ""
-    notFounded.innerHTML = "<p>Please, enter an ingredient.</p>"
+    notFounded.innerHTML = `<p class="msg-error">Please, enter an ingredient.</p>`
     notFounded.classList.add("notFound")
     return
   }
@@ -55,7 +55,7 @@ function getDrinkList () {
     .catch(error => {
       drinkList.innerHTML = ""
       console.error('Error:', error);
-      notFounded.innerHTML = "<p>Sorry, ingredient not found. Try another.</p>";
+      notFounded.innerHTML = `<p class="msg-error">Sorry, ingredient not found. Try another.</p>`;
     notFounded.classList.add("notFound");
     });
   }
