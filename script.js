@@ -14,6 +14,7 @@ function getDrinkList () {
   let searchInputText = document.getElementById("search-input").value.trim()
 
   if (searchInputText === "") {
+    drinkList.innerHTML = ""
     notFounded.innerHTML = "<p>Please, enter an ingredient.</p>"
     notFounded.classList.add("notFound")
     return
@@ -26,6 +27,7 @@ function getDrinkList () {
       let html = ""
 
       if (data.drinks) {
+        notFounded.innerHTML = ""
         data.drinks.forEach(drink => {
           html += `
           <div class = "drink-item" data-id = "${drink.idDrink}">
