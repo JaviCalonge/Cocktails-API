@@ -51,6 +51,7 @@ function getDrinkList () {
 
     })
     .catch(error => {
+      drinkList.innerHTML = ""
       console.error('Error:', error);
       notFounded.innerHTML = "<p>Sorry, ingredient not found. Try another.</p>";
     notFounded.classList.add("notFound");
