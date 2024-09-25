@@ -263,15 +263,17 @@ body{
 /* Media Queries */
 
 @media (max-width: 500px) {
+    
     .drink-wrapper{
         padding: 0;
+        margin: 0;
     }
     .title{
-        margin: 20px;
+        margin: 0;
         font-size: 1.4rem;
     }
     .quote {
-        margin: 20px;
+        margin: 0;
         font-size: 0.8rem;
     }
 }
