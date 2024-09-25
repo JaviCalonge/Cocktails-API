@@ -22,7 +22,7 @@ body{
     background-size: cover;
 }
 
-/* */
+/* CABECERA */
 
 .container{
     min-height: 100vh;
@@ -46,7 +46,7 @@ body{
 }
 
 .enlace-home {
-text-decoration: none;
+    text-decoration: none;
 }
 
 .quote {
@@ -54,16 +54,7 @@ text-decoration: none;
     font-size: 1rem;
 }
 
-/*  */
-
-.btn{
-    font-family: inherit;
-    cursor: pointer;
-    outline: 0;
-    font-size: 1.05rem;
-}
-
-/*  */
+/* SEARCH */
 
 .drink-search-box{
     margin: 1.2rem 0;
@@ -71,12 +62,23 @@ text-decoration: none;
     align-items: stretch;
 }
 
-.search-control,
 .search-btn{
-    width: 100%;
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    background: var(--ligth-orange);
+    color: #fff;
+    border: none;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    transition: all 0.5s linear;
 }
 
 .search-control{
+    width: 100%;
     padding: 0 1rem;
     font-size: 1.1rem;
     font-family: inherit;
@@ -91,23 +93,11 @@ text-decoration: none;
     color: var(--ligth-orange);
 }
 
-.search-btn{
-    width: 55px;
-    height: 55px;
-    font-size: 1.8rem;
-    background: var(--ligth-orange);
-    color: #fff;
-    border: none;
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    transition: all 0.5s linear;
-}
-
 .search-btn:hover{
     background: var(--dark-orange);
 }
 
-/* */
+/* RESULTS */
 
 
 .drink-result{
@@ -116,6 +106,7 @@ text-decoration: none;
 
 #drink{
     margin: 2.4rem 0;
+    color: #fff;
 }
 
 .drink-item{
@@ -132,9 +123,6 @@ text-decoration: none;
 
 .drink-name{
     padding: 1.5rem 0.5rem;
-}
-
-.drink-name h3{
     font-size: 1.4rem;
     color: #f0f0f0;
 }
@@ -157,14 +145,13 @@ text-decoration: none;
     background: var(--dark-orange);
 }
 
-/* drink details */
+/* DRINK DETAILS */
 
 .drink-details{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
     background: var(--ligth-orange);
     border-radius: 1rem;
     width: 90%;
@@ -183,7 +170,7 @@ text-decoration: none;
     border-radius: 2rem;
 }
 
-/* js related */
+/* CONTENIDO CREADO EN JS */
 
 .showRecipe{
     display: block;
@@ -191,10 +178,6 @@ text-decoration: none;
 
 .drink-details-content{
     margin: 2rem;
-}
-
-.drink-details-content p:not(.recipe-category){
-    padding: 1rem 0;
 }
 
 .recipe-close-btn{
@@ -210,11 +193,10 @@ text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .recipe-title{
-    letter-spacing: 1px;
     padding-bottom: 1rem;
 }
 
@@ -235,7 +217,7 @@ text-decoration: none;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
 }
 
@@ -250,13 +232,6 @@ text-decoration: none;
     transition: all 0.4s linear;
 }
 
-.recipe-link a:hover{
-    opacity: 0.8;
-}
-
-
-/*  */
-
 #not-found {
     display: flex;
     justify-content: center;
@@ -264,6 +239,7 @@ text-decoration: none;
 
 .msg-error {
     background-color: #fff;
+    border-radius: 10px;
 }
 
 .notFound{
@@ -274,6 +250,8 @@ text-decoration: none;
     border-radius: 20px; 
 }
 
+/* FOOTER BTN UP */
+
 #footer {
     display: flex;
     justify-content: right;
@@ -281,6 +259,7 @@ text-decoration: none;
 }
 
 .btn-up {
+    font-size: 1.2rem;
     text-decoration: none;
     color: #000;
     background-color: #fff;
@@ -294,7 +273,13 @@ text-decoration: none;
     margin-bottom: 200px;
 }
 
-/* Media Queries */
+.btn-up:hover {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* MEDIA QUERIES */
 
 @media (max-width: 500px) {
     .drink-wrapper{

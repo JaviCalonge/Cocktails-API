@@ -42,7 +42,7 @@ function getDrinkList () {
             </div>
           </div>`
         })
-        footerBtn.innerHTML += `<a href="#home"><button class="btn-up">Get up</button></a>`
+        footerBtn.innerHTML += `<a href="#home"><button class="btn-up">Go up</button></a>`
         drinkList.classList.remove("notFound")
 
         document.body.style.backgroundColor = "#0B0B17"
