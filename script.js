@@ -2,6 +2,7 @@ const searchBtn = document.getElementById("search-btn")
 const drinkList = document.getElementById("drink")
 const drinkDetailsContent = document.querySelector(".drink-details-content")
 const recipeCloseBtn = document.getElementById("recipe-close-btn")
+const notFounded = document.getElementById("not-found")
 
 searchBtn.addEventListener("click", getDrinkList)
 drinkList.addEventListener("click", getDrinkRecipe)
@@ -11,12 +12,19 @@ recipeCloseBtn.addEventListener("click", () => {
 
 function getDrinkList () {
   let searchInputText = document.getElementById("search-input").value.trim()
+
+  if (searchInputText === "") {
+    notFounded.innerHTML = "<p>Please, enter an ingredient.</p>"
+    notFounded.classList.add("notFound")
+    return
+  }
+
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchInputText}`)
     .then(res => res.json())
     .then(data => {
-      console.log(data);
       
       let html = ""
+
       if (data.drinks) {
         data.drinks.forEach(drink => {
           html += `
@@ -30,22 +38,21 @@ function getDrinkList () {
             </div>
           </div>`
         })
+        
         drinkList.classList.remove("notFound")
+
+        document.body.style.backgroundColor = "#0B0B17"
+        document.body.style.backgroundImage = "none"
       }
 
-//ERROR: VM1493:1 Uncaught (in promise) SyntaxError: Unexpected end of JSON input
-//at script.js:15:22
-
-      // else {
-      //   html = "Sorry, we didn´t find any recipe with this ingredient. Try another."
-      //   mealList.classList.add("notFound")
-      // }
-      //  if (searchInputText === ""){
-      //   html = "Please enter an ingredient."
-      //   mealList.classList.add("notFound")
-      // }
       drinkList.innerHTML = html
+
     })
+    .catch(error => {
+      console.error('Error:', error);
+      notFounded.innerHTML = "<p>Sorry, ingredient not found. Try another.</p>";
+    notFounded.classList.add("notFound");
+    });
   }
 
 function getDrinkRecipe (e) {
